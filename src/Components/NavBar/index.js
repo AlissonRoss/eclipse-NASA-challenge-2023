@@ -8,7 +8,7 @@ export default function NavBar() {
        <AppBar>
             <Menu className='NavBar-Menu'>
             {navbar.map((navbarItem) => (
-                <a><Button variant='h6' >
+                <a href={navbarItem.link}><Button variant='h6' >
                     {navbarItem.name}
                 </Button></a>
             ))}
@@ -20,9 +20,11 @@ export default function NavBar() {
 };
 const navbar = [
     {
-        name:'header'
+        name:'header',
+        link: '#header'
     },{
-        name:'body'
+        name:'body',
+        link: "#body"
     }
     
 ];
