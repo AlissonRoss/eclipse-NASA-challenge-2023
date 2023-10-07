@@ -3,6 +3,18 @@
   
 }
 
+.App-card{
+  /* margin-bottom: 1em; */
+  padding-bottom: 1em;
+  border-radius: 100;
+  border: red;
+}
+
+.CardContent{
+  border: darkgoldenrod;
+  border-style: solid;
+}
+
 .App-header{
   background-image: url('./Images/Moon.png'); 
   background-repeat: no-repeat; 
