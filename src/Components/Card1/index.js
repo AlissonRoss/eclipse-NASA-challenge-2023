@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 
 export default function BasicCard() {
     return (
-      <Card className='App-card'  sx={{ width: "50%" }}>
+      <Card className='App-card'  sx={{ width: "50%" , backgroundColor: "transparent"}}>
         {itemData.map((item) => (
         <CardContent className='cardContent' border='50'>
           <Typography variant="h5" component="div">
