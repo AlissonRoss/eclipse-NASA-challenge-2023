@@ -3,10 +3,10 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 export default function BasicCard() {
-    return (
-      <Card className='App-card'  sx={{ width: "50%" , backgroundColor: "transparent"}}>
-        {itemData.map((item) => (
-        <CardContent className='cardContent' border='50'>
+  return (
+    <Card className='App-card' sx={{ width: '50%', backgroundColor: 'transparent',}}>
+      {itemData.map((item) => (
+        <CardContent className='cardContent' key={item.question}>
           <Typography variant="h5" component="div">
             {item.question}
           </Typography>
@@ -14,10 +14,12 @@ export default function BasicCard() {
             {item.answer}
           </Typography>
         </CardContent>
-        ))}
-      </Card>
-    );
+      ))}
+    </Card>
+  );
 }
+
+
 
 const itemData = [
     {
