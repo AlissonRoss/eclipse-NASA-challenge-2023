@@ -6,15 +6,14 @@ import Button  from '@mui/material/Button';
 export default function NavBar() {
     return (
        <AppBar>
-        <Menu className='NavBar-Menu'>
-            <Button variant='h6' >
-                Header
-            </Button>
-            <Button variant='h6' >
-                Body
-            </Button>
-        </Menu>
-
+            <Menu className='NavBar-Menu'>
+                <Button variant='h6' >
+                    Header
+                </Button>
+                <Button variant='h6' >
+                    Body
+                </Button>
+            </Menu>
         </AppBar>
     );
 }
