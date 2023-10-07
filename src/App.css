@@ -15,7 +15,8 @@
 }
 
 .App-header{
-  background-image: url('./Images/Moon.png'); 
+  background-image:  url('./Images/Moon.png'); 
+  background-blend-mode: overlay;
   background-repeat: no-repeat; 
   background-position: center top;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);;
