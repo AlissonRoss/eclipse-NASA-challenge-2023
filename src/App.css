@@ -3,6 +3,11 @@
   
 }
 
+.App-header{
+  background-image: url('/Users/shyamgupta/Desktop/eclipse-NASA-challenge-2023/src/Images/Moon.png'); 
+  background-repeat: no-repeat; 
+}
+
 .App-header, .App-body {
   background-color: #282c34;
   height: 50vh;
