@@ -4,8 +4,9 @@
 }
 
 .App-header{
-  background-image: url('/Users/shyamgupta/Desktop/eclipse-NASA-challenge-2023/src/Images/Moon.png'); 
+  background-image: url('./Images/Moon.png'); 
   background-repeat: no-repeat; 
+  background-position: center top;
 }
 
 .App-header, .App-body {
@@ -20,8 +21,8 @@
   margin: 0%;
 }
 .App-body{
-  background-color: rgb(195, 195, 195);
-  color: black;
+  background-color: rgb(27, 6, 6);
+  color: rgb(25, 4, 4);
 }
 .NavBar-Menu{
   display: flex;
