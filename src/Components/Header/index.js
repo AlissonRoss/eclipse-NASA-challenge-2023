@@ -7,7 +7,7 @@ export default function Header() {
         <header>
         Space Cadets
        </header>
-       <h3 class="App-subHeading">
+       <h3 className="App-subHeading">
         Eclipse Project
         </h3>
         </div>
