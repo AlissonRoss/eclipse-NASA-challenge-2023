@@ -7,13 +7,22 @@ export default function NavBar() {
     return (
        <AppBar>
             <Menu className='NavBar-Menu'>
-                <Button variant='h6' >
-                    Header
-                </Button>
-                <Button variant='h6' >
-                    Body
-                </Button>
+            {navbar.map((navbarItem) => (
+                <a><Button variant='h6' >
+                    {navbarItem.name}
+                </Button></a>
+            ))}
             </Menu>
         </AppBar>
     );
-}
+
+    
+};
+const navbar = [
+    {
+        name:'header'
+    },{
+        name:'body'
+    }
+    
+];
