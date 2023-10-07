@@ -3,7 +3,7 @@ import React from "react";
 export default function Header() {
 
     return (
-        <div className="App-header">
+        <div className="App-header" id='header'>
         <header>
         Space Cadets
        </header>
