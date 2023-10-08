@@ -42,7 +42,7 @@ export default function InteractiveLearning() {
                         </Typography>
                         {isLastQuestion ? (
                             <button>
-                                <a href='https://science.nasa.gov/eclipses/'>Click to learn more!</a>
+                                <a href='https://science.nasa.gov/eclipses/'>That's it! Click to learn more!</a>
                             </button>
                         ) : (
                             <button onClick={handleNextQuestion}>Next</button>
