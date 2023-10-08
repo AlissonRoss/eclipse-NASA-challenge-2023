@@ -50,6 +50,7 @@
 }
 .App-card{
   background-color: transparent !important;
+  width: 100% !important;
 }
 .NavBar-Menu{
   display: flex;
