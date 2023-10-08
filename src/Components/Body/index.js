@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import Eclipse from '../Eclipse'
 import CardContent from '@mui/material/CardContent';
@@ -73,11 +73,17 @@ export default function InteractiveLearning() {
             {isLastQuestion && (
                 <div>
                     <p style={{color: 'white', fontSize: '16px'}}>
-                        Congratulations! You've read through all the questions.
+                        Congratulations!! You've read through all the questions. Here are a list of resources to learn more about Eclipses!
                     </p>
                     <div>
-                    <a style={{color: 'white', fontSize: '16px'}}href='https://science.nasa.gov/eclipses/'>NASA's Eclipses Page</a>
-                </div>
+                        <ul>
+                            <li> <a href='https://science.nasa.gov/eclipses/' style={{ color: 'white', fontSize: '16px'}}>Eclipses</a></li>
+                            <li> <a href='https://science.nasa.gov/eclipses/safety/' style={{ color: 'white', fontSize: '16px'}}>Eclipse Safety</a></li>
+                            <li> <a href='https://svs.gsfc.nasa.gov/14143#media_group_83344' style={{ color: 'white', fontSize: '16px'}}>Lunar Eclipses</a></li>
+                            <li> <a href='https://science.nasa.gov/earth/facts/' style={{ color: 'white', fontSize: '16px'}}>Facts about Earth</a></li>
+                            <li> <a href='https://science.nasa.gov/eclipses/faq/' style={{ color: 'white', fontSize: '16px'}}>Eclipses FAQ</a></li>
+                        </ul>
+                    </div>
                 </div>
             )}
         </div>
