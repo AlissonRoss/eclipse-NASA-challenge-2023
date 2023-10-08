@@ -81,9 +81,10 @@ export default function InteractiveLearning() {
                             <button onClick={handleNextQuestion}>Next</button>
                         )}
                         </div>
-                    </div>
-                </CardContent>
-
+                    
+                    </AccordionDetails>
+                </Accordion>
+                </div>
             </Card>
             {isLastQuestion && (
                 <div>
