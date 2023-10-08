@@ -9,9 +9,10 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Image1 from '../Card1/Solar_Eclipse.png'
 import Image2 from '../Card1/Totality.png'
 import Image3 from '../Card1/Moon_Phases.png'
+import Image4 from '../Card1/Time.png'
 import Image5 from '../Card1/Scientists.png'
 import Image6 from '../Card1/Difference.png'
-import Image7 from '../Card1/Eclipse Season.png'
+import Image7 from '../Card1/Eclipse_Season.png'
 
 export const itemData = [
   {
@@ -31,7 +32,8 @@ export const itemData = [
   },
   {
       question: 'How often do eclipses occur?',
-      answer: "There are about 4-7 eclipses per year."
+      answer: "There are about 4-7 eclipses per year.",
+      src: Image4
   },
   {
       question: 'How do scientists know when and where eclipses will occur?',
