@@ -3,9 +3,27 @@
   
 }
 
+.App-card{
+  /* margin-bottom: 1em; */
+  padding-bottom: 1em;
+  border-radius: 100;
+  border: red;
+}
+
+.CardContent{
+  border: darkgoldenrod;
+  border-style: solid;
+}
+
+.App-header{
+  background-image: url('./Images/Moon.png'); 
+  background-repeat: no-repeat; 
+  background-position: center top;
+}
+
 .App-header, .App-body {
   background-color: #282c34;
-  height: 50vh;
+  min-height: 50vh;
   flex-direction: column;
   align-items: center;
   display: flex;
@@ -15,8 +33,8 @@
   margin: 0%;
 }
 .App-body{
-  background-color: rgb(195, 195, 195);
-  color: black;
+  background-color: rgb(27, 6, 6);
+  color: rgb(25, 4, 4);
 }
 .NavBar-Menu{
   display: flex;
