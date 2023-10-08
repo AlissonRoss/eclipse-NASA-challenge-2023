@@ -1,0 +1,230 @@
+/*
+ * Scale notes:
+ *
+ * Orient the Earth-Moon model horizontally or vertically based on which direction fits better on screen.
+ *
+ * Moon diameter:    2,160.1 miles
+ * Earth diameter:   7,917.5 miles
+ * Sun diameter:   865,370   miles
+
+ * Moon-Earth distance:    240,000 miles  --> stretched to fit 
+ * Earth-Sun distance:  93,000,000 miles (387.5x above distance)
+ */
+
+#eclipse > div
+{
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: skyblue;
+    border: thin white solid;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    /* When the Earth and Moon are "absolute" positioned, they are positioned relative to this block */
+    position: relative;
+    
+    /* Scale the model according to what fits along the longest screen axis. */
+    /* This must account for the header height of 70px */
+    --earth-moon-distance: calc(max(95svh - 70px, 95svw));
+
+    /* Earth-Moon distance is 240,000 miles and is scaled down to the above CSS length */
+    --pixels-per-mile: calc(var(--earth-moon-distance) / 240000);
+    --moon-diameter: calc(2160.1 * var(--pixels-per-mile));
+    --earth-diameter: calc(7917.5 * var(--pixels-per-mile));
+}
+
+#eclipse > div > button
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#eclipse > div > div{
+    position: absolute;
+    font-size: large;
+    text-align: left;
+}
+
+#eclipse > div.lunar-eclipse > .scale::before{
+    content: "Lunar ";
+}
+
+#eclipse > div:not(.lunar-eclipse) > .scale::before{
+    content: "Solar ";
+}
+
+@media (orientation:portrait)
+{
+    #eclipse > div > .Sun::before
+{
+    content: "⬆️ ";
+}
+}
+
+@media (orientation:landscape)
+{
+    #eclipse > div > .Sun::before
+{
+    content: "⬅️ ";
+}
+}
+
+#eclipse > div > .scale{
+    right: 0;
+    top: 0;
+    text-align: right;
+}
+
+#eclipse > div > .Sun{
+    left: 0;
+    top: 0;
+}
+
+.eclipse-animation > .Earth{
+    background: linear-gradient(to bottom, blue, rgb(55,55,55));
+    border-radius: 50%;
+    width: var(--earth-diameter);
+    height: var(--earth-diameter);
+    left: calc(50% - var(--earth-diameter)/2);
+}
+
+.eclipse-animation:not(.lunar-eclipse) > .Earth{
+    bottom: 1px;
+}
+
+.eclipse-animation.lunar-eclipse > .Earth{
+    top: 1px;
+}
+
+.eclipse-animation .Shadow{
+    background-color: rgba(0,0,0,0.25);
+}
+
+.eclipse-animation > .Earth > .Moon-Orbit{
+    position: relative;
+    transform-origin: 0 0;
+    left: 50%;
+    top: 50%;
+    width: var(--earth-moon-distance);
+
+    /* orbit debug: */
+/*     height: 1px;
+    width: 100px;
+    background-color: yellow; */
+}
+
+.eclipse-animation > .Earth > .Moon-Orbit > .Moon{
+    background: white;
+    content: "Moon";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    width: var(--moon-diameter);
+    height: var(--moon-diameter);
+}
+
+@media (orientation:portrait)
+{
+.eclipse-animation > .Earth > .Moon-Orbit > .Moon,
+.eclipse-animation.lunar-eclipse > .Earth > .Moon-Orbit{
+    animation: orbit-moon-solar-elipse-inverse-portrait 5s linear normal infinite;
+}
+
+.eclipse-animation > .Earth > .Moon-Orbit,
+.eclipse-animation.lunar-eclipse > .Earth > .Moon-Orbit > .Moon{
+    animation: orbit-moon-solar-elipse-portrait 5s linear normal infinite;
+}
+}
+
+.eclipse-animation > .Earth > .Moon-Orbit > .Moon > .Shadow{
+    position: absolute;
+    top: 50%;
+    height: calc(var(--earth-moon-distance)*2);
+    width: var(--moon-diameter);
+}
+
+@keyframes orbit-moon-solar-elipse-portrait {
+    from { transform: rotateZ(240deg) }
+    to { transform: rotateZ(300deg) }
+}
+
+@keyframes orbit-moon-solar-elipse-inverse-portrait {
+    from { transform: rotateZ(-240deg) }
+    to { transform: rotateZ(-300deg) }
+}
+
+@keyframes orbit-moon-lunar-elipse-landscape {
+    from { transform: rotateZ(-30deg) }
+    to { transform: rotateZ(30deg) }
+}
+
+@keyframes orbit-moon-lunar-elipse-inverse-landscape {
+    from { transform: rotateZ(30deg) }
+    to { transform: rotateZ(-30deg) }
+}
+
+@keyframes orbit-moon-solar-elipse-landscape {
+    from { transform: rotateZ(150deg) }
+    to { transform: rotateZ(210deg) }
+}
+
+@keyframes orbit-moon-solar-elipse-inverse-landscape {
+    from { transform: rotateZ(-150deg) }
+    to { transform: rotateZ(-210deg) }
+}
+
+.eclipse-animation > .Earth > .Shadow{
+    position: absolute;
+    top: 50%;
+    height: calc(var(--earth-moon-distance)*2);
+    width: var(--earth-diameter);
+}
+
+/* Lay out Earth and Moon horizontally if there is more room horizontally */
+@media (orientation:landscape)
+{
+    .eclipse-animation > .Earth{
+        background: linear-gradient(to right, blue, rgb(55,55,55));
+        left: auto;
+        right: 0;
+        top: calc(50% - var(--earth-diameter)/2) !important;
+        bottom: auto;
+    }
+    
+    .eclipse-animation.lunar-eclipse > .Earth{
+        right: auto;
+        left: 0;
+    }
+    
+    .eclipse-animation > .Earth > .Shadow{
+        top: 0;
+        left: 50%;
+        width: calc(var(--earth-moon-distance)*2) !important;
+        height: var(--earth-diameter) !important;
+    }
+    
+    .eclipse-animation > .Earth > .Moon-Orbit > .Moon > .Shadow{
+        left: 50%;
+        top: 0;
+        width: calc(var(--earth-moon-distance)*2);
+        height: var(--moon-diameter);
+    }
+
+    .eclipse-animation.lunar-eclipse > .Earth > .Moon-Orbit > .Moon{
+        animation: orbit-moon-lunar-elipse-landscape 5s linear normal infinite !important;
+    }
+    
+    .eclipse-animation.lunar-eclipse > .Earth > .Moon-Orbit{
+        animation: orbit-moon-lunar-elipse-inverse-landscape 5s linear normal infinite !important;
+    }
+
+    .eclipse-animation:not(.lunar-eclipse) > .Earth > .Moon-Orbit{
+        animation: orbit-moon-solar-elipse-landscape 5s linear normal infinite !important;
+    }
+    
+    .eclipse-animation:not(.lunar-eclipse) > .Earth > .Moon-Orbit > .Moon{
+        animation: orbit-moon-solar-elipse-inverse-landscape 5s linear normal infinite !important;
+    }
+}

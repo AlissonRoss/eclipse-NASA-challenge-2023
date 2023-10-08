@@ -2,6 +2,14 @@
   text-align: center;
   
 }
+
+/* Create an invisible spacer that forces links to #element to scroll past the fixed page header */
+.header-spacer{
+  padding-top: 70px;
+  margin-top: -70px;
+  width: 100%;
+}
+
 .cardContent{
   display: flex; 
   background-color: white;

@@ -49,8 +49,9 @@ export default function BasicCard() {
   };
 
   return (
-    <div>
-      {itemData.map((item, index) => (
+    <div className="header-spacer" id="card-deck">
+      {
+      itemData.map((item, index) => (
         <Card className='App-card' key={item.question}>
           <CardContent className='cardContent' onClick={() => toggleCard(index)}>
             <Typography variant="h5" component="div">

@@ -24,9 +24,14 @@ const navbar = [
     {
         name:'header',
         link: '/#header'
-    },{
-        name:'body',
-        link: '/#body'
-    }
+    },
+    {
+        name:'eclipse',
+        link: '/#eclipse'
+    },
+    {
+        name:'cards',
+        link: '/#card-deck'
+    },
     
 ];
