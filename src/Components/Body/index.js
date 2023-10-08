@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import BasicCard from '../Card1';
-import { itemData } from './index';
-import { load } from 'dotenv';
+import { itemData } from '../Card1/index';
 
 export default function NavBar() {
 
@@ -34,9 +32,6 @@ export default function NavBar() {
 
             // fetch and append the next set of content 
             const nextContent = {};
-            const startIndex = content.length;
-            const endIndex = startIndex + 5;
-            const additionalContent = itemData.slide(startIndex, endIndex);
 
             // append the new content to the existing content
             setContent((prevContent) => [...prevContent, nextContent]);
@@ -56,6 +51,24 @@ export default function NavBar() {
             window.removeEventListener('scroll', handleEndlessScroll);
         };
     }, [content]);
+
+    return (
+        <div className="App-body">
+            {content.map((item, index) => (
+                <Card key={index} className='App-card' sx={{ width: "50%"}}>
+                    <CardContent border={1} className='cardContent'>
+                        <Typography variant="h5" component="div">
+                            {item.question}
+                        </Typography>
+                        <Typography variant="body2">
+                            {item.answer}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            ))}
+            {loading && <p>Loading more content...</p>}
+        </div>
+    );
 }
 
     // return (
