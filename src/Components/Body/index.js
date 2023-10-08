@@ -60,7 +60,8 @@ export default function InteractiveLearning() {
                             )}   
                         {isLastQuestion ? (
                             <button>
-                                <a href='https://science.nasa.gov/eclipses/'>That's it! Click to learn more!</a>
+                                <p style={{fontSize: '14px'}}>You've read through all the questions!</p>
+                                <a href='https://science.nasa.gov/eclipses/' style={{fontSize: '14px'}}>Click to learn more!</a>
                             </button>
                         ) : (
                             <button onClick={handleNextQuestion}>Next</button>
