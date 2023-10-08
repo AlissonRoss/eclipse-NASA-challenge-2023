@@ -9,7 +9,6 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-
 // INTERACTIVE CARD IMPLEMENTATION
 
 export default function InteractiveLearning() {
@@ -40,7 +39,8 @@ export default function InteractiveLearning() {
         <div className="App-body">
             <Eclipse />
             <Card className='App-card' sx={{ width: "50%" }}>
-                <Accordion expanded={showAnswer}>
+                <div className="accordion-container">
+                <Accordion expanded={showAnswer} onChange={handleToggleAnswer}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -57,6 +57,7 @@ export default function InteractiveLearning() {
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
+                </div>
                 <div>
                     {isLastQuestion ? (
                         <button>
@@ -79,9 +80,6 @@ export default function InteractiveLearning() {
     );
 }
     
-
-
-
 // INFINITE SCROLL IMPLEMENTATION
 
 // const initialLoadCount = 3;

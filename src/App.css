@@ -8,17 +8,19 @@
   margin-top: -70px;
   width: 100%;
 }
-
-.cardContent{
-  display: flex; 
+.cardContent {
+  display: flex;
   background-color: white;
   color: black;
-  min-height: 4.5em;
   justify-content: center;
   align-items: center;
   margin: .7em .2em;
   padding: 2em;
   border-radius: 20px;
+  transition: max-height 1s ease-in-out;
+}
+.cardContent.expanded {
+  transition: max-height 1s ease-in-out;
 }
 .App-header{
   background-image:  url('./Images/Moon.png'); 
@@ -38,6 +40,21 @@
   font-size: calc(30px + 2vmin);
   color: white;
   margin: 0%;
+}
+
+.MuiAccordionSummary-content {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.MuiAccordionDetails-root {
+  max-height: 7em;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.Mui-expanded .MuiAccordionDetails-root {
+  max-height: 200px; 
 }
 
 .App-body{
