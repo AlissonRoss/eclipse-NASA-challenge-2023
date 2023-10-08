@@ -61,7 +61,10 @@
   background-color: rgb(27, 6, 6);
   color: rgb(25, 4, 4);
   min-height: 50vh;
-  
+  background-image: url('./Images/meteor_background.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
   display: flex;
   justify-content: center;
 }
@@ -76,5 +79,4 @@
 }
 .header-button{
   color: white !important;
-  
 }
