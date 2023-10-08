@@ -3,13 +3,17 @@
   
 }
 .MuiCardContent-root{
+  display: flex;
   background-color: white;
   color: black;
+  width: 25em;
+  min-height: 4.5em;
+  justify-content: center;
+  align-items: center;
   margin: .7em;
   padding: 2em;
   border-radius: 20px;
 }
-
 .App-header{
   background-image:  url('./Images/Moon.png'); 
   background-blend-mode: lighten;
@@ -37,7 +41,7 @@
  
 }
 .MuiPaper-root{
-  min-width: 80% !important;
+  width: 100% !important;
 }
 .NavBar-Menu{
   display: flex;
