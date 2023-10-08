@@ -23,10 +23,10 @@
   transition: max-height 1s ease-in-out;
 }
 .App-header{
-  background-image:  url('./Images/Moon.png'); 
-  background-blend-mode: lighten;
-  background-repeat: no-repeat; 
-  background-position: center top;
+  background-image: url('./Images/meteor_background.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
   height: 80vh;
 }
 
@@ -57,14 +57,10 @@
   max-height: 200px; 
 }
 
-.App-body{
-  background-color: rgb(27, 6, 6);
+.App-body {
+  background: linear-gradient(to bottom, #333, #000);
   color: rgb(25, 4, 4);
   min-height: 50vh;
-  background-image: url('./Images/meteor_background.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed; 
   display: flex;
   justify-content: center;
 }
