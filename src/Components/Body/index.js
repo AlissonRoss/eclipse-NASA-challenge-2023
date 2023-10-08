@@ -71,10 +71,12 @@ export default function InteractiveLearning() {
             </Card>
             {isLastQuestion && (
                 <div>
-                    <p>
+                    <p style={{color: 'white', fontSize: '16px'}}>
                         Congratulations! You've read through all the questions.
                     </p>
-                    <a href='https://science.nasa.gov/eclipses/'>NASA's Eclipses Page</a>
+                    <div>
+                    <a style={{color: 'white', fontSize: '16px'}}href='https://science.nasa.gov/eclipses/'>NASA's Eclipses Page</a>
+                </div>
                 </div>
             )}
         </div>
