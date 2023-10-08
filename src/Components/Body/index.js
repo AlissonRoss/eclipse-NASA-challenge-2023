@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
+import Eclipse from '../Eclipse'
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { itemData } from '../Card1/index';
@@ -31,6 +32,7 @@ export default function InteractiveLearning() {
 
     return (
         <div className="App-body">
+            <Eclipse/>
             <Card className='App-card' sx={{ width: "50%"}}>
                 <CardContent border={1} className='cardContent'>
                     <Typography variant="h5" component="div">

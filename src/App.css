@@ -2,14 +2,26 @@
   text-align: center;
   
 }
-.MuiCardContent-root{
+
+/* Create an invisible spacer that forces links to #element to scroll past the fixed page header */
+.header-spacer{
+  padding-top: 70px;
+  margin-top: -70px;
+  width: 100%;
+}
+
+.cardContent{
+  display: flex; 
   background-color: white;
   color: black;
-  margin: .7em;
+  max-width: 25em;
+  min-height: 4.5em;
+  justify-content: center;
+  align-items: center;
+  margin: .7em .2em;
   padding: 2em;
   border-radius: 20px;
 }
-
 .App-header{
   background-image:  url('./Images/Moon.png'); 
   background-blend-mode: lighten;
@@ -34,17 +46,17 @@
   background-color: rgb(27, 6, 6);
   color: rgb(25, 4, 4);
   min-height: 50vh;
- 
+  
 }
-.MuiPaper-root{
-  min-width: 80% !important;
+.App-card{
+  background-color: transparent !important;
 }
 .NavBar-Menu{
   display: flex;
   align-content: flex-start;
   background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%) !important;
 }
-.MuiButtonBase-root{
+.header-button{
   color: white !important;
   
 }

@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/base';
 import { toBeRequired } from '@testing-library/jest-dom/matchers';
 
-export const itemData = [
+const itemData = [
   {
       question: 'How do eclipses occur?',
       answer: "Eclipses happen when the Sun, Moon, and Earth line up just right. The Moon and Earth are the stars of this cosmic show, and there are two main types: lunar and solar eclipses.\nImagine a lunar eclipse like Earth giving the Moon a hug. It's when Earth gets in the way of sunlight reaching the Moon because it's positioned right between the Moon and the Sun.\nNow, picture a solar eclipse as the Moon giving the Earth a hug. This time, it's the Moon that stands between Earth and the Sun, blocking the sunlight from reaching us down here on Earth. These eclipse events are like nature's amazing light shows in the sky!"
@@ -38,27 +38,28 @@ export const itemData = [
 ];
 
 export default function BasicCard() {
-    // Initialize an array of showAnswer states, one for each card
-    const [showAnswer, setShowAnswer] = useState(Array(itemData.length).fill(false));
+  // Initialize an array of showAnswer states, one for each card
+  const [showAnswer, setShowAnswer] = useState(Array(itemData.length).fill(false));
 
-    // Function to toggle the showAnswer state for a specific card
-    const toggleCard = (index) => {
-      const updatedShowAnswer = [...showAnswer];
-      updatedShowAnswer[index] = !updatedShowAnswer[index];
-      setShowAnswer(updatedShowAnswer);
-    };
+  // Function to toggle the showAnswer state for a specific card
+  const toggleCard = (index) => {
+    const updatedShowAnswer = [...showAnswer];
+    updatedShowAnswer[index] = !updatedShowAnswer[index];
+    setShowAnswer(updatedShowAnswer);
+  };
 
-    return (
-      <div>
-        {itemData.map((item, index) => (
-          <Card className='App-card' sx={{ width: '70%', backgroundColor: 'transparent' }} key={item.question}>
-            <CardContent className='cardContent' onClick={() => toggleCard(index)}>
-              <Typography variant="h5" component="div">
-                {showAnswer[index] ? item.answer : item.question}
-              </Typography>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className="header-spacer" id="card-deck">
+      {
+      itemData.map((item, index) => (
+        <Card className='App-card' key={item.question}>
+          <CardContent className='cardContent' onClick={() => toggleCard(index)}>
+            <Typography variant="h5" component="div">
+              {showAnswer[index] ? item.answer : item.question}
+            </Typography>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+}
