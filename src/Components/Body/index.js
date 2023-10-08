@@ -33,7 +33,7 @@ export default function InteractiveLearning() {
     return (
         <div className="App-body">
             <Eclipse/>
-            <Card className='App-card' sx={{ width: "50%"}}>
+            <Card className='App-card'>
                 <CardContent border={1} className='cardContent'>
                     <Typography variant="h5" component="div">
                         {currentQuestion.question}

@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 /* Create an invisible spacer that forces links to #element to scroll past the fixed page header */
@@ -14,7 +13,6 @@
   display: flex; 
   background-color: white;
   color: black;
-  max-width: 25em;
   min-height: 4.5em;
   justify-content: center;
   align-items: center;
@@ -47,10 +45,12 @@
   color: rgb(25, 4, 4);
   min-height: 50vh;
   
+  display: flex;
+  justify-content: center;
 }
 .App-card{
+  max-width: 25em;
   background-color: transparent !important;
-  width: 100% !important;
 }
 .NavBar-Menu{
   display: flex;
