@@ -56,24 +56,6 @@ export default function NavBar() {
             window.removeEventListener('scroll', handleEndlessScroll);
         };
     }, [content]);
-
-    return (
-        <div className="App-body">
-            {content.map((item, index) => (
-                <Card key={index} className='App-card' sx={{ width: "50% "}}>
-                    <CardContent border={1} className='cardContent'>
-                        <Typography variant="h5" component="div">
-                            {item.question}
-                        </Typography>
-                        <Typography variant="body2">
-                            {item.answer}
-                        </Typography>
-                    </CardContent>
-                </Card>
-            ))}
-            {loading && <p>Loading more conten... </p>}
-        </div>
-    );
 }
 
 

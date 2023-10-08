@@ -1,16 +1,18 @@
-
+import React, { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import {Menu} from '@mui/base';
-import Button  from '@mui/material/Button';
+import { Button } from '@mui/material';
 
 export default function NavBar() {
     return (
        <AppBar>
             <Menu className='NavBar-Menu'>
             {navbar.map((navbarItem) => (
-                <a href={navbarItem.link}><Button variant='h6' >
-                    {navbarItem.name}
-                </Button></a>
+                    <a variant='h6' href={navbarItem.link}>
+                        <Button>
+                        {navbarItem.name}
+                        </Button>
+                    </a>
             ))}
             </Menu>
         </AppBar>
@@ -21,10 +23,10 @@ export default function NavBar() {
 const navbar = [
     {
         name:'header',
-        link: '#header'
+        link: '/#header'
     },{
         name:'body',
-        link: "#body"
+        link: '/#body'
     }
     
 ];

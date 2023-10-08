@@ -2,42 +2,49 @@
   text-align: center;
   
 }
-
-.App-card{
-  /* margin-bottom: 1em; */
-  padding-bottom: 1em;
-  border-radius: 100;
-  border: red;
-}
-
-.CardContent{
-  border: darkgoldenrod;
-  border-style: solid;
+.MuiCardContent-root{
+  background-color: white;
+  color: black;
+  margin: .7em;
+  padding: 2em;
+  border-radius: 16px;
 }
 
 .App-header{
-  background-image: url('./Images/Moon.png'); 
+  background-image:  url('./Images/Moon.png'); 
+  background-blend-mode: lighten;
   background-repeat: no-repeat; 
   background-position: center top;
+  height: 80vh;
 }
 
 .App-header, .App-body {
   background-color: #282c34;
-  min-height: 50vh;
   flex-direction: column;
   align-items: center;
   display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Orbitron', sans-serif;
+  font-size: calc(30px + 2vmin);
   color: white;
   margin: 0%;
 }
+
 .App-body{
   background-color: rgb(27, 6, 6);
   color: rgb(25, 4, 4);
+  min-height: 50vh;
+ 
+}
+.MuiPaper-root{
+  min-width: 80% !important;
 }
 .NavBar-Menu{
   display: flex;
   align-content: flex-start;
+  background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%) !important;
 }
-
+.MuiButtonBase-root{
+  color: white !important;
+  
+}
