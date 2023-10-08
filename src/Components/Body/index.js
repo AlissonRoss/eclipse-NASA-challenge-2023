@@ -4,6 +4,11 @@ import Eclipse from '../Eclipse'
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { itemData } from '../Card1/index.js';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 // INTERACTIVE CARD IMPLEMENTATION
 
@@ -15,12 +20,13 @@ export default function InteractiveLearning() {
         if (questionIndex < itemData.length - 1) {
             // increment the question index to move to the next question
             setQuestionIndex(questionIndex + 1);
-            // clear the user's answer for next question
+            // clear the user's answer for the next question
             setShowAnswer(false);
         }
     };
 
     const currentQuestion = itemData[questionIndex];
+
     const currentAnswer = showAnswer ? currentQuestion.answer : 'Click me to reveal answer';
 
     const handleToggleAnswer = () => {
@@ -32,25 +38,34 @@ export default function InteractiveLearning() {
 
     return (
         <div className="App-body">
-            <Eclipse/>
-            <Card className='App-card' sx={{ width: "50%"}}>
-                <CardContent border={1} className='cardContent'>
-                    <Typography variant="h5" component="div">
-                        {currentQuestion.question}
-                    </Typography>
-                    <div>
-                        <Typography variant="body2" onClick={handleToggleAnswer}>
-                            {currentAnswer}
+            <Eclipse />
+            <Card className='App-card' sx={{ width: "50%" }}>
+                <Accordion expanded={showAnswer}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                        onClick={handleToggleAnswer}
+                    >
+                        <Typography variant="h5" component="div">
+                            {currentQuestion.question}
                         </Typography>
-                        {isLastQuestion ? (
-                            <button>
-                                <a href='https://science.nasa.gov/eclipses/'>That's it! Click to learn more!</a>
-                            </button>
-                        ) : (
-                            <button onClick={handleNextQuestion}>Next</button>
-                        )}
-                    </div>
-                </CardContent>
+                    </AccordionSummary>
+                    <AccordionDetails style={{ minHeight: showAnswer ? 'auto' : 0 }}>
+                        <Typography variant="body2">
+                            {showAnswer ? currentQuestion.answer : 'Click to reveal answer'}
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <div>
+                    {isLastQuestion ? (
+                        <button>
+                            <a href='https://science.nasa.gov/eclipses/'>That's it! Click to learn more!</a>
+                        </button>
+                    ) : (
+                        <button onClick={handleNextQuestion}>Next</button>
+                    )}
+                </div>
             </Card>
             {isLastQuestion && (
                 <div>
@@ -63,7 +78,6 @@ export default function InteractiveLearning() {
         </div>
     );
 }
-
     
 
 

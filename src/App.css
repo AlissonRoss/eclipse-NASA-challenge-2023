@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 /* Create an invisible spacer that forces links to #element to scroll past the fixed page header */
@@ -50,7 +49,6 @@
 }
 .App-card{
   background-color: transparent !important;
-  width: 100% !important;
 }
 .NavBar-Menu{
   display: flex;
