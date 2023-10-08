@@ -18,9 +18,13 @@
     align-content: center;
     justify-content: center;
     height: calc(100vh - 100px);
-    background-color: skyblue;
+    max-height: 25em;
+    max-width: 25em;
+    margin: 10px auto;
+    background-image: url('./universe.png');
+    background-size: cover;
     overflow: hidden;
-    color: black;
+    color: white;
     border-radius: 20px;
 
     /* When the Earth and Moon are "absolute" positioned, they are positioned relative to this div */
@@ -72,7 +76,7 @@
 
 /* Place Earth in center of view */
 .eclipse-animation > .Earth{
-    background: linear-gradient(to bottom, blue, rgb(55,55,55));
+    background: linear-gradient(to bottom, rgb(36, 223, 83), rgb(55,55,55));
     border-radius: 50%;
     width: var(--earth-diameter);
     height: var(--earth-diameter);
@@ -107,7 +111,7 @@
 
 /* Earth and Moon shadow generically drop downward from the center of the celestial body */
 .eclipse-animation .Shadow{
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(255, 255, 255, 0.25);
     position: absolute;
     top: 50%;
     height: calc(var(--earth-moon-distance)*10);
