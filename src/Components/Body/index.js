@@ -20,6 +20,15 @@ export default function InteractiveLearning() {
         }
     };
 
+    const handlePreviousQuestion = () => {
+        if (questionIndex > 0) {
+            // decrement the question index to move to the previous question
+            setQuestionIndex(questionIndex - 1);
+            // clear the user's answer for next question
+            setShowAnswer(false);
+        }
+    };
+
     const currentQuestion = itemData[questionIndex];
     const currentAnswer = showAnswer ? currentQuestion.answer : 'Click me to reveal answer';
 
@@ -29,6 +38,7 @@ export default function InteractiveLearning() {
     };
 
     const isLastQuestion = questionIndex === itemData.length - 1;
+    const isFirstQuestion = questionIndex === 0;
 
     return (
         <div className="App-body">
@@ -42,6 +52,12 @@ export default function InteractiveLearning() {
                         <Typography variant="body2" onClick={handleToggleAnswer}>
                             {currentAnswer}
                         </Typography>
+                        <div>
+                            {isFirstQuestion ? (
+                                <button disabled>Back</button>
+                            ) : (
+                                <button onClick={handlePreviousQuestion}>Back</button>
+                            )}   
                         {isLastQuestion ? (
                             <button>
                                 <a href='https://science.nasa.gov/eclipses/'>That's it! Click to learn more!</a>
@@ -49,6 +65,7 @@ export default function InteractiveLearning() {
                         ) : (
                             <button onClick={handleNextQuestion}>Next</button>
                         )}
+                        </div>
                     </div>
                 </CardContent>
             </Card>
