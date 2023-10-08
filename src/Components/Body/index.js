@@ -55,7 +55,7 @@ export default function InteractiveLearning() {
                     <p>
                         Congratulations! You've read through all the questions.
                     </p>
-                    <a href='https://science.nasa.gov/eclipses/'>Click for more information</a>
+                    <a href='https://science.nasa.gov/eclipses/'>NASA's Eclipses Page</a>
                 </div>
             )}
         </div>
