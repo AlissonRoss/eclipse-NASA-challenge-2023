@@ -14,7 +14,10 @@
 .eclipse-animation
 {
     margin: .7em .2em;
-    max-width: 25em;
+    max-width: 90%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
     height: calc(100vh - 100px);
     background-color: skyblue;
     overflow: hidden;

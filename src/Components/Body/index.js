@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import Eclipse from '../Eclipse'
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { itemData } from '../Card1/index';
+import { itemData } from '../Card1/index.js';
 
 // INTERACTIVE CARD IMPLEMENTATION
 
