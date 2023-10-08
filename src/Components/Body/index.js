@@ -58,7 +58,6 @@ export default function NavBar() {
     }, [content]);
 }
 
-
     // return (
     //     <div className="App-body">
     //         {content.map((item, index) => (
@@ -76,4 +75,4 @@ export default function NavBar() {
     //         {loading && <p>Loading more content... </p>}
     //         </div>
             
-    //     );
+    //     )
