@@ -2,21 +2,29 @@ import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Button } from '@mui/base';
-import { toBeRequired } from '@testing-library/jest-dom/matchers';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Image1 from '../Card1/Solar_Eclipse.png'
+import Image2 from '../Card1/Totality.png'
+import Image3 from '../Card1/Moon_Phases.png'
 
 export const itemData = [
   {
       question: 'How do eclipses occur?',
-      answer: "Eclipses happen when the Sun, Moon, and Earth line up just right. The Moon and Earth are the stars of this cosmic show, and there are two main types: lunar and solar eclipses.\nImagine a lunar eclipse like Earth giving the Moon a hug. It's when Earth gets in the way of sunlight reaching the Moon because it's positioned right between the Moon and the Sun.\nNow, picture a solar eclipse as the Moon giving the Earth a hug. This time, it's the Moon that stands between Earth and the Sun, blocking the sunlight from reaching us down here on Earth. These eclipse events are like nature's amazing light shows in the sky!"
-  },
+      answer: "Eclipses happen when the Sun, Moon, and Earth line up just right. The Moon and Earth are the stars of this cosmic show, and there are two main types: lunar and solar eclipses.\nImagine a lunar eclipse like Earth giving the Moon a hug. It's when Earth gets in the way of sunlight reaching the Moon because it's positioned right between the Moon and the Sun.\nNow, picture a solar eclipse as the Moon giving the Earth a hug. This time, it's the Moon that stands between Earth and the Sun, blocking the sunlight from reaching us down here on Earth. These eclipse events are like nature's amazing light shows in the sky!",
+      src: Image1
+    },
   {
       question: 'Why do only some people on Earth see an eclipse at a given time?',
-      answer: "Seeing an eclipse on Earth is a bit like catching a shooting star—it's pretty rare! This is because the Moon's shadow on Earth isn't very wide, so only a small part of our planet gets to see the eclipse. To be in the right spot, you have to be on the side of Earth where the Sun is shining and where the Moon's shadow is passing by. It's like finding a hidden treasure in the sky, and not everyone gets to see it every time!"
+      answer: "Seeing an eclipse on Earth is a bit like catching a shooting star—it's pretty rare! This is because the Moon's shadow on Earth isn't very wide, so only a small part of our planet gets to see the eclipse. To be in the right spot, you have to be on the side of Earth where the Sun is shining and where the Moon's shadow is passing by. It's like finding a hidden treasure in the sky, and not everyone gets to see it every time!",
+      src: Image2
   },
   {
       question: 'What causes the Sun, Moon, and Earth to align?',
-      answer: "These special alignments happen because of the way the Earth and the Moon move around the Sun. The Moon circles around Earth, while Earth travels in its path around the Sun. Their positions relative to each other and the Sun keep changing, creating various phases and alignments."
+      answer: "These special alignments happen because of the way the Earth and the Moon move around the Sun. The Moon circles around Earth, while Earth travels in its path around the Sun. Their positions relative to each other and the Sun keep changing, creating various phases and alignments.",
+      src: Image3
   },
   {
       question: 'How often do eclipses occur?',
