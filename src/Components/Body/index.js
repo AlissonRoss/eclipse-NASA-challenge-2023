@@ -65,26 +65,34 @@ export default function InteractiveLearning() {
                         <Typography variant="body2">
                             {showAnswer ? currentQuestion.answer : 'Click to reveal answer'}
                         </Typography>
-                    </AccordionDetails>
-                </Accordion>
-                </div>
-                <div>
-                    {isLastQuestion ? (
-                        <button>
-                            <a href='https://science.nasa.gov/eclipses/'>That's it! Click to learn more!</a>
-                        </button>
-                    ) : (
-                        <button onClick={handleNextQuestion}>Next</button>
-                    )}
-                </div>
+
+                        <div>
+                            {isFirstQuestion ? (
+                                <button disabled>Back</button>
+                            ) : (
+                                <button onClick={handlePreviousQuestion}>Back</button>
+                            )}   
+                        {isLastQuestion ? (
+                            <button>
+                                <p style={{fontSize: '14px'}}>You've read through all the questions!</p>
+                                <a href='https://science.nasa.gov/eclipses/' style={{fontSize: '14px'}}>Click to learn more!</a>
+                            </button>
+                        ) : (
+                            <button onClick={handleNextQuestion}>Next</button>
+                        )}
+                        </div>
+                    </div>
+                </CardContent>
 
             </Card>
             {isLastQuestion && (
                 <div>
-                    <p>
+                    <p style={{color: 'white', fontSize: '16px'}}>
                         Congratulations! You've read through all the questions.
                     </p>
-                    <a href='https://science.nasa.gov/eclipses/'>NASA's Eclipses Page</a>
+                    <div>
+                    <a style={{color: 'white', fontSize: '16px'}}href='https://science.nasa.gov/eclipses/'>NASA's Eclipses Page</a>
+                </div>
                 </div>
             )}
         </div>
