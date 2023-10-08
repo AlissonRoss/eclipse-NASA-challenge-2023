@@ -2,15 +2,15 @@
   text-align: center;
   
 }
-.MuiCardContent-root{
-  display: flex;
+.cardContent{
+  display: flex; 
   background-color: white;
   color: black;
-  width: 25em;
+  max-width: 25em;
   min-height: 4.5em;
   justify-content: center;
   align-items: center;
-  margin: .7em;
+  margin: .7em .2em;
   padding: 2em;
   border-radius: 20px;
 }
@@ -38,17 +38,17 @@
   background-color: rgb(27, 6, 6);
   color: rgb(25, 4, 4);
   min-height: 50vh;
- 
+  
 }
-.MuiPaper-root{
-  width: 100% !important;
+.App-card{
+  background-color: transparent !important;
 }
 .NavBar-Menu{
   display: flex;
   align-content: flex-start;
   background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%) !important;
 }
-.MuiButtonBase-root{
+.header-button{
   color: white !important;
   
 }

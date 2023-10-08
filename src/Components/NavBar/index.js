@@ -9,7 +9,7 @@ export default function NavBar() {
             <Menu className='NavBar-Menu'>
             {navbar.map((navbarItem) => (
                     <a variant='h6' href={navbarItem.link}>
-                        <Button>
+                        <Button className='header-button'>
                         {navbarItem.name}
                         </Button>
                     </a>

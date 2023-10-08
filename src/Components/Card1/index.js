@@ -38,27 +38,27 @@ const itemData = [
 ];
 
 export default function BasicCard() {
-    // Initialize an array of showAnswer states, one for each card
-    const [showAnswer, setShowAnswer] = useState(Array(itemData.length).fill(false));
+  // Initialize an array of showAnswer states, one for each card
+  const [showAnswer, setShowAnswer] = useState(Array(itemData.length).fill(false));
 
-    // Function to toggle the showAnswer state for a specific card
-    const toggleCard = (index) => {
-      const updatedShowAnswer = [...showAnswer];
-      updatedShowAnswer[index] = !updatedShowAnswer[index];
-      setShowAnswer(updatedShowAnswer);
-    };
+  // Function to toggle the showAnswer state for a specific card
+  const toggleCard = (index) => {
+    const updatedShowAnswer = [...showAnswer];
+    updatedShowAnswer[index] = !updatedShowAnswer[index];
+    setShowAnswer(updatedShowAnswer);
+  };
 
-    return (
-      <div>
-        {itemData.map((item, index) => (
-          <Card className='App-card' sx={{ width: '70%', backgroundColor: 'transparent' }} key={item.question}>
-            <CardContent className='cardContent' onClick={() => toggleCard(index)}>
-              <Typography variant="h5" component="div">
-                {showAnswer[index] ? item.answer : item.question}
-              </Typography>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div>
+      {itemData.map((item, index) => (
+        <Card className='App-card' key={item.question}>
+          <CardContent className='cardContent' onClick={() => toggleCard(index)}>
+            <Typography variant="h5" component="div">
+              {showAnswer[index] ? item.answer : item.question}
+            </Typography>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+}
