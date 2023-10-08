@@ -47,9 +47,25 @@
     text-align: right;
 }
 
-.eclipse-animation > .Sun-Label{
+.eclipse-animation > .Sun-label{
     left: 20px;
     top: 20px;
+}
+
+.eclipse-animation > .solar-eclipse{
+    top: calc(50% - var(--earth-moon-distance) - 1em);
+}
+
+.eclipse-animation > .lunar-eclipse{
+    top: calc(50% + var(--earth-moon-distance) + 1em);
+}
+
+/* Center both labels */
+.eclipse-animation > .solar-eclipse,
+.eclipse-animation > .lunar-eclipse{
+    width: 10em;
+    left: calc(50% - 5em);
+    text-align: center;
 }
 
 /* Place Earth in center of view */
