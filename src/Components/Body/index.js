@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import Eclipse from '../Eclipse'
 import CardContent from '@mui/material/CardContent';
@@ -87,6 +87,7 @@ export default function InteractiveLearning() {
                 </button>
               ) : (
                 <div>
+
                 <button onClick={handleNextQuestion}>Next</button> 
                 <button onClick={handlePreviousQuestion} >Back</button>
                 </div>
@@ -94,12 +95,18 @@ export default function InteractiveLearning() {
             </div>
           </Card>
           {isLastQuestion && (
-            <div>
-              <p>
-                Congratulations! You've read through all the questions.
-              </p>
-              <a href='https://science.nasa.gov/eclipses/'>NASA's Eclipses Page</a>
-            </div>
+             <p style={{color: 'white', fontSize: '16px'}}>
+                        Congratulations!! You've read through all the questions. Here are a list of resources to learn more about Eclipses!
+                    </p>
+                    <div>
+                        <ul>
+                            <li> <a href='https://science.nasa.gov/eclipses/' style={{ color: 'white', fontSize: '16px'}}>Eclipses</a></li>
+                            <li> <a href='https://science.nasa.gov/eclipses/safety/' style={{ color: 'white', fontSize: '16px'}}>Eclipse Safety</a></li>
+                            <li> <a href='https://svs.gsfc.nasa.gov/14143#media_group_83344' style={{ color: 'white', fontSize: '16px'}}>Lunar Eclipses</a></li>
+                            <li> <a href='https://science.nasa.gov/earth/facts/' style={{ color: 'white', fontSize: '16px'}}>Facts about Earth</a></li>
+                            <li> <a href='https://science.nasa.gov/eclipses/faq/' style={{ color: 'white', fontSize: '16px'}}>Eclipses FAQ</a></li>
+                        </ul>
+                    </div>
           )}
         </div>
       );
