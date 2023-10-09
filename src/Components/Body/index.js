@@ -59,8 +59,11 @@ export default function InteractiveLearning() {
         <div className="App-body">
           <Eclipse />
           <Card className='App-card' sx={{ width: "50%" }}>
-            <div className="accordion-container">
-              <Accordion expanded={showAnswer || showImage} onChange={handleToggleAnswer}>
+            <div className="accordion-container" background-color='gray'>
+              <Accordion expanded={showAnswer || showImage} 
+                onChange={handleToggleAnswer}
+                sx={{ backgroundColor: 'rgb(200, 200, 200)' }}
+               >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
