@@ -8,7 +8,7 @@ export default function Header() {
         Space Catdets
        </header>
        <h3 className="App-subHeading">
-        Eclipse Project
+        Eclipses: The Celestial Adventure
         </h3>
         </div>
     );
