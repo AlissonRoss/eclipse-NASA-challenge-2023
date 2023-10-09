@@ -74,7 +74,7 @@ export default function InteractiveLearning() {
                 </AccordionSummary>
                 <AccordionDetails style={{ minHeight: showAnswer ? 'auto' : 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 {showImage && (
-                    <img src={currentQuestion.src} alt="Eclipse" width="50%"/>
+                    <img src={currentQuestion.src} alt="Eclipse" width= "fitcontent"/>
                 )}
                 <Typography variant="body2" style={{ marginBottom: '10px' }}>
                     {showAnswer ? currentQuestion.answer : ''}
