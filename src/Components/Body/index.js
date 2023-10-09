@@ -95,6 +95,8 @@ export default function InteractiveLearning() {
             </div>
           </Card>
           {isLastQuestion && (
+
+            <>
              <p style={{color: 'white', fontSize: '16px'}}>
                         Congratulations!! You've read through all the questions. Here are a list of resources to learn more about Eclipses!
                     </p>
@@ -107,6 +109,7 @@ export default function InteractiveLearning() {
                             <li> <a href='https://science.nasa.gov/eclipses/faq/' style={{ color: 'white', fontSize: '16px'}}>Eclipses FAQ</a></li>
                         </ul>
                     </div>
+            </>
           )}
         </div>
       );
