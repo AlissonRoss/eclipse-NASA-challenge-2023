@@ -33,5 +33,9 @@ const navbar = [
         name:'cards',
         link: '/#card-deck'
     },
+    {
+        name:'resources',
+        link: '/#resources'
+    }
     
 ];
