@@ -57,8 +57,10 @@ export default function InteractiveLearning() {
 
     return (
         <div className="App-body">
+          <h4>Eclipse Simulation</h4>
           <Eclipse />
-          <Card className='App-card' sx={{ width: "50%" }}>
+          <h4>Trivia</h4>
+          <Card className='App-card' sx={{ width: "50%" }} id="card-deck">
             <div className="accordion-container">
               <Accordion expanded={showAnswer || showImage} onChange={handleToggleAnswer}>
                 <AccordionSummary

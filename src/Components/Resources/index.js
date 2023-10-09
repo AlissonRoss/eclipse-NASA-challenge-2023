@@ -5,7 +5,7 @@ export default function Resources() {
     return (
         <div className="App-resources" id='resources'>
             <div>
-            <h3>Resources</h3>
+            <h4>Resources</h4>
                 <ul>
                     <li> <a href='https://science.nasa.gov/eclipses/' style={{ color: 'white', fontSize: '16px'}}>Eclipses</a></li>
                     <li> <a href='https://science.nasa.gov/eclipses/safety/' style={{ color: 'white', fontSize: '16px'}}>Eclipse Safety</a></li>

@@ -59,7 +59,7 @@
 
 .App-body {
   background: linear-gradient(to bottom, #333, #000);
-  color: rgb(25, 4, 4);
+  color: white;
   min-height: 60vh;
   display: flex;
   justify-content: center;
