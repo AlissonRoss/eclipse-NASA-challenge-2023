@@ -86,7 +86,10 @@ export default function InteractiveLearning() {
                   <a href='https://science.nasa.gov/eclipses/'>That's it! Click to learn more!</a>
                 </button>
               ) : (
-                <button onClick={handleNextQuestion}>Next</button>
+                <div>
+                <button onClick={handleNextQuestion}>Next</button> 
+                <button onClick={handlePreviousQuestion} >Back</button>
+                </div>
               )}
             </div>
           </Card>
