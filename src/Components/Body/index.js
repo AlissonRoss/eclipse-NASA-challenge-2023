@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import Eclipse from '../Eclipse'
 import CardContent from '@mui/material/CardContent';
@@ -57,13 +57,12 @@ export default function InteractiveLearning() {
 
     return (
         <div className="App-body">
+          <h4>Eclipse Simulation</h4>
           <Eclipse />
-          <Card className='App-card' sx={{ width: "50%" }}>
-            <div className="accordion-container" background-color='gray'>
-              <Accordion expanded={showAnswer || showImage} 
-                onChange={handleToggleAnswer}
-                sx={{ backgroundColor: 'rgb(200, 200, 200)' }}
-               >
+          <h4>Trivia</h4>
+          <Card className='App-card' sx={{ width: "50%" }} id="card-deck">
+            <div className="accordion-container">
+              <Accordion expanded={showAnswer || showImage} onChange={handleToggleAnswer}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
@@ -75,7 +74,7 @@ export default function InteractiveLearning() {
                 </AccordionSummary>
                 <AccordionDetails style={{ minHeight: showAnswer ? 'auto' : 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 {showImage && (
-                    <img src={currentQuestion.src} alt="Eclipse" width="50%"/>
+                    <img src={currentQuestion.src} alt="Eclipse" width= "fitcontent"/>
                 )}
                 <Typography variant="body2" style={{ marginBottom: '10px' }}>
                     {showAnswer ? currentQuestion.answer : ''}
@@ -90,6 +89,7 @@ export default function InteractiveLearning() {
                 </button>
               ) : (
                 <div>
+
                 <button onClick={handleNextQuestion}>Next</button> 
                 <button onClick={handlePreviousQuestion} >Back</button>
                 </div>
@@ -97,12 +97,12 @@ export default function InteractiveLearning() {
             </div>
           </Card>
           {isLastQuestion && (
-            <div>
-              <p>
-                Congratulations! You've read through all the questions.
-              </p>
-              <a href='https://science.nasa.gov/eclipses/'>NASA's Eclipses Page</a>
-            </div>
+
+            <>
+             <p style={{color: 'white', fontSize: '16px'}}>
+                        Congratulations!! You've read through all the questions. Here are a list of resources to learn more about Eclipses!
+            </p>
+            </>
           )}
         </div>
       );

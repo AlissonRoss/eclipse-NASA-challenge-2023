@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <div className="App-header" id='header'>
         <header>
-        Space Cadets
+        Space Catdets
        </header>
        <h3 className="App-subHeading">
         Eclipse Project

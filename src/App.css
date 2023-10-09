@@ -27,10 +27,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; 
-  height: 80vh;
+  height: 100vh;
 }
 
-.App-header, .App-body {
+.App-header, .App-body, .App-resources {
   background-color: #282c34;
   flex-direction: column;
   align-items: center;
@@ -59,8 +59,8 @@
 
 .App-body {
   background: linear-gradient(to bottom, #333, #000);
-  color: rgb(25, 4, 4);
-  min-height: 50vh;
+  color: white;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
 }
@@ -75,4 +75,7 @@
 }
 .header-button{
   color: white !important;
+}
+.App-resources{
+  min-height: 5em;
 }
