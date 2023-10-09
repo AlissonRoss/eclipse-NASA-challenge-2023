@@ -14,15 +14,20 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 export default function InteractiveLearning() {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
+    const [showImage, setShowImage] = useState(false);
+  
+    const currentQuestion = itemData[questionIndex];
+  
 
     const handleNextQuestion = () => {
         if (questionIndex < itemData.length - 1) {
-            // increment the question index to move to the next question
-            setQuestionIndex(questionIndex + 1);
-            // clear the user's answer for the next question
-            setShowAnswer(false);
+          // increment the question index to move to the next question
+          setQuestionIndex(questionIndex + 1);
+          // clear the user's answer for the next question
+          setShowAnswer(false);
+          setShowImage(false); // Reset to hide the image
         }
-    };
+      };
 
     const handlePreviousQuestion = () => {
         if (questionIndex > 0) {
@@ -33,62 +38,64 @@ export default function InteractiveLearning() {
         }
     };
 
-    const currentQuestion = itemData[questionIndex];
-
     const currentAnswer = showAnswer ? currentQuestion.answer : 'Click me to reveal answer';
 
     const handleToggleAnswer = () => {
-        // toggle the visibility of the answer
-        setShowAnswer(!showAnswer);
-    };
+        // Toggle between showing the answer and image
+        if (showAnswer) {
+          setShowAnswer(false);
+          setShowImage(true);
+        } else if (showImage) {
+          setShowImage(false);
+        } else {
+          setShowAnswer(true);
+        }
+      };
 
     const isLastQuestion = questionIndex === itemData.length - 1;
     const isFirstQuestion = questionIndex === 0;
 
     return (
         <div className="App-body">
-            <Eclipse />
-            <Card className='App-card' sx={{ width: "50%" }}>
-                <div className="accordion-container">
-                <Accordion expanded={showAnswer} onChange={handleToggleAnswer}>
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                        onClick={handleToggleAnswer}
-                    >
-                        <Typography variant="h5" component="div">
-                            {currentQuestion.question}
-                        </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails style={{ minHeight: showAnswer ? 'auto' : 0 }}>
-                        <Typography variant="body2">
-                            {showAnswer ? currentQuestion.answer : 'Click to reveal answer'}
-                        </Typography>
-
-                        <div>
-                            {isFirstQuestion ? (
-                                <button disabled>Back</button>
-                            ) : (
-                                <button onClick={handlePreviousQuestion}>Back</button>
-                            )}   
-                        {isLastQuestion ? (
-                            <button>
-                                <p style={{fontSize: '14px'}}>You've read through all the questions!</p>
-                                <a href='https://science.nasa.gov/eclipses/' style={{fontSize: '14px'}}>Click to learn more!</a>
-                            </button>
-                        ) : (
-                            <button onClick={handleNextQuestion}>Next</button>
-                        )}
-                        </div>
-                    
-                    </AccordionDetails>
-                </Accordion>
-                </div>
-            </Card>
-            {isLastQuestion && (
+          <Eclipse />
+          <Card className='App-card' sx={{ width: "50%" }}>
+            <div className="accordion-container">
+              <Accordion expanded={showAnswer || showImage} onChange={handleToggleAnswer}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography variant="h5" component="div">
+                    {currentQuestion.question}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails style={{ minHeight: showAnswer ? 'auto' : 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                {showImage && (
+                    <img src={currentQuestion.src} alt="Eclipse" width="50%"/>
+                )}
+                <Typography variant="body2" style={{ marginBottom: '10px' }}>
+                    {showAnswer ? currentQuestion.answer : ''}
+                </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </div>
+            <div>
+              {isLastQuestion ? (
+                <button>
+                  <a href='https://science.nasa.gov/eclipses/'>That's it! Click to learn more!</a>
+                </button>
+              ) : (
                 <div>
-                    <p style={{color: 'white', fontSize: '16px'}}>
+
+                <button onClick={handleNextQuestion}>Next</button> 
+                <button onClick={handlePreviousQuestion} >Back</button>
+                </div>
+              )}
+            </div>
+          </Card>
+          {isLastQuestion && (
+             <p style={{color: 'white', fontSize: '16px'}}>
                         Congratulations!! You've read through all the questions. Here are a list of resources to learn more about Eclipses!
                     </p>
                     <div>
@@ -100,11 +107,10 @@ export default function InteractiveLearning() {
                             <li> <a href='https://science.nasa.gov/eclipses/faq/' style={{ color: 'white', fontSize: '16px'}}>Eclipses FAQ</a></li>
                         </ul>
                     </div>
-                </div>
-            )}
+          )}
         </div>
-    );
-}
+      );
+    }
     
 // INFINITE SCROLL IMPLEMENTATION
 
